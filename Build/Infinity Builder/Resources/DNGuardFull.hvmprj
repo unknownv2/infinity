@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HVMProject version ="2">
+  <Assemblies>
+    {0}
+  </Assemblies>
+  <Output>
+    <path clear ="true">{1}</path>
+    <runtime rename ="true">Infinity_x86.dll</runtime>
+    <runtime64 rename ="true">Infinity_x64.dll</runtime64>
+    <X64Optimize>true</X64Optimize>
+  </Output>
+  <Settings>
+    <AntiIldasm>true</AntiIldasm>
+    <EncryptNew>true</EncryptNew>
+    <EncryptRes>true</EncryptRes>
+    <EncryptBlob>true</EncryptBlob>
+    <AntiDis>true</AntiDis>
+    <EncryptUS>true</EncryptUS>
+    <HVM>true</HVM>
+    <HVMSig>true</HVMSig>
+    <HVMEH>true</HVMEH>
+    <HVMStr>true</HVMStr>
+    <Level>5</Level>
+    <AntiTrace>true</AntiTrace>
+    <HVMAntiTrace>true</HVMAntiTrace>
+    <HVMProxyMethod>true</HVMProxyMethod>
+  </Settings>
+  <Obfuscation>
+    <AutoRename>true</AutoRename>
+    <ObILCode>true</ObILCode>
+    <RenameMode>1</RenameMode>
+  </Obfuscation>
+  <TrialSettings>
+    <CustomizeMessage>true</CustomizeMessage>
+    <Title></Title>
+    <Text></Text>
+  </TrialSettings>
+</HVMProject>

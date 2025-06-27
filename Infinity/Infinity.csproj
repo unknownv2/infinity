@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C852F99-3E49-44B1-AFF1-1F1870C8BCED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NoDev.Infinity</RootNamespace>
+    <AssemblyName>Infinity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NoDev.Infinity.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.0.0.13, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\DevComponents.DotNetBar2\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Binding\BindingAttribute.cs" />
+    <Compile Include="Classes\Binding\BitBindingAttribute.cs" />
+    <Compile Include="Classes\Binding\BoolBindingAttribute.cs" />
+    <Compile Include="Classes\Binding\DecimalBindingAttribute.cs" />
+    <Compile Include="Classes\Binding\IndexBindingAttribute.cs" />
+    <Compile Include="Classes\Binding\IntBindingAttribute.cs" />
+    <Compile Include="Classes\Binding\NodeBinder.cs" />
+    <Compile Include="Network\Api\ApiRequestFactory.cs" />
+    <Compile Include="Network\Api\ApiState.cs" />
+    <Compile Include="Network\Api\IRequestSignatureCalculator.cs" />
+    <Compile Include="Network\Api\RequestSignatureCalculator.cs" />
+    <Compile Include="Network\Api\ValidatedApiRequest.cs" />
+    <Compile Include="Network\Extensions.cs" />
+    <Compile Include="Network\Method.cs" />
+    <Compile Include="Network\Api\ApiRequest.cs" />
+    <Compile Include="Network\ClientValidator.cs" />
+    <Compile Include="Security\AssemblyValidator.cs" />
+    <Compile Include="Security\DNGuard.cs" />
+    <Compile Include="Classes\InfinitySettings.cs" />
+    <Compile Include="Security\InternalSHA256Managed.cs" />
+    <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Controls\DownloadGameToolsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FailedToLoadToolPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UpgradeToDiamondPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotLoggedInPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InfinityTabStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Security\StrongNameHelper.cs" />
+    <Compile Include="Tools\GameInfo.cs" />
+    <Compile Include="Tools\Info\IGameInfoRetriever.cs" />
+    <Compile Include="Libraries\OriginLibrary.cs" />
+    <Compile Include="Libraries\SteamApp.cs" />
+    <Compile Include="Libraries\SteamLibrary.cs" />
+    <Compile Include="Libraries\Ubisoft Game Launcher\UbisoftGameLauncher.cs" />
+    <Compile Include="Libraries\Ubisoft Game Launcher\UbisoftUser.cs" />
+    <Compile Include="Network\Server.cs" />
+    <Compile Include="Tools\DebugToolRetriever.cs" />
+    <Compile Include="Tools\Images\DirectoryToolImageRetriever.cs" />
+    <Compile Include="Tools\Images\IToolImageRetriever.cs" />
+    <Compile Include="Tools\Info\IToolInfoRetriever.cs" />
+    <Compile Include="Tools\Literals\EncryptedBinaryLiteralDeserializer.cs" />
+    <Compile Include="Tools\Literals\ILiteralDeserializer.cs" />
+    <Compile Include="Tools\Literals\LiteralDictionary.cs" />
+    <Compile Include="Tools\Literals\BinaryLiteralDeserializer.cs" />
+    <Compile Include="Tools\Info\ManifestFileGameInfoRetriever.cs" />
+    <Compile Include="Tools\Info\ManifestFileToolAndGameInfoRetriever.cs" />
+    <Compile Include="Tools\ToolFactory.cs" />
+    <Compile Include="Tools\Images\ToolImageRetriever.cs" />
+    <Compile Include="Tools\ToolInfo.cs" />
+    <Compile Include="Controls\GameList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\GameListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Info\ToolInfoRetriever.cs" />
+    <Compile Include="User\AccessLevel.cs" />
+    <Compile Include="User\Me.cs" />
+    <EmbeddedResource Include="Controls\DownloadGameToolsPanel.resx">
+      <DependentUpon>DownloadGameToolsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FailedToLoadToolPanel.resx">
+      <DependentUpon>FailedToLoadToolPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HomePanel.resx">
+      <DependentUpon>HomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UpgradeToDiamondPanel.resx">
+      <DependentUpon>UpgradeToDiamondPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Games.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{05f85126-42d0-4fcb-8c5b-ee5e8e23ab7c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfinityToolLib\InfinityToolLib.csproj">
+      <Project>{52222449-39c0-45d3-851a-821e73fbb57a}</Project>
+      <Name>InfinityToolLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Origin_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steam_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Uplay_256.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

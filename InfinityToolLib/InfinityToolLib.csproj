@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52222449-39C0-45D3-851A-821E73FBB57A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NoDev.InfinityToolLib</RootNamespace>
+    <AssemblyName>NoDev.InfinityToolLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.0.0.13, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\DevComponents.DotNetBar2\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DialogBox.cs" />
+    <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\InfinityStyleManager.cs" />
+    <Compile Include="Controls\SymbolBoxButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SymbolButtonItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Memory\BinaryType.cs" />
+    <Compile Include="Memory\Game.cs" />
+    <Compile Include="Memory\GameBinary.cs" />
+    <Compile Include="Panels\InfinityPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Memory\ModuleNotFoundException.cs" />
+    <Compile Include="Memory\ProcessMemory.cs" />
+    <Compile Include="Memory\ProcessMemoryStream.cs" />
+    <Compile Include="Memory\ModuleImageParser.cs" />
+    <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AssemblyProtection.cs" />
+    <Compile Include="Security\StrongNameHelper.cs" />
+    <Compile Include="Classes\DictionarySettingsStorage.cs" />
+    <Compile Include="Tools\ITool.cs" />
+    <Compile Include="Tools\ILiteralCollection.cs" />
+    <Compile Include="Tools\SavegameTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\SideMenuInfinityPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\ScrollableInfinityPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\Tool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\TrainerTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{05f85126-42d0-4fcb-8c5b-ee5e8e23ab7c}</Project>
+      <Name>Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Panels\SideMenuInfinityPanel.resx">
+      <DependentUpon>SideMenuInfinityPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\ScrollableInfinityPanel.resx">
+      <DependentUpon>ScrollableInfinityPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
